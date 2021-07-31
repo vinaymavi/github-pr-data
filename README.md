@@ -1,2 +1,2 @@
-# github-pr-analysis
+# github-pr-data
 Project to analysis Github pull requests.
