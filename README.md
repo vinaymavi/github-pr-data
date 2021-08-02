@@ -16,6 +16,7 @@ Project to get data from github pull requests and transfrom it to a format that 
 ### Reference
 
 * Github API - https://docs.github.com/en/rest
+* Github python SDK - https://pygithub.readthedocs.io/en/latest/
 * Click command line interface - https://click.palletsprojects.com/en/8.0.x/documentation/
 ## CLI `ghpr`
 `ghpr` is the command line interface for the project.
