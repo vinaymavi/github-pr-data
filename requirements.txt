@@ -14,9 +14,11 @@ PyGithub==1.55
 PyJWT==2.1.0
 PyNaCl==1.4.0
 pyparsing==2.4.7
+pyperclip==1.8.2
 pytest==6.2.4
 requests==2.26.0
 six==1.16.0
+tabulate==0.8.9
 toml==0.10.2
 urllib3==1.26.6
 wrapt==1.12.1
