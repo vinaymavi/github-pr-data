@@ -7,7 +7,7 @@ Project to get data from github pull requests and transfrom it to a format that 
 * AI Categorization of the comments
 
 ### installation 
-``` pip install ghpr` 
+``` pip install ghpr ``` 
 
 ### Development setup 
 
