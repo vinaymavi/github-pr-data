@@ -6,6 +6,9 @@ Project to get data from github pull requests and transfrom it to a format that 
 * AI analysis of the comments
 * AI Categorization of the comments
 
+### installation 
+``` pip install ghpr` 
+
 ### Development setup 
 
 * Create a virtualenv with python3.6 (suggested location: `./virtualEnv`)
@@ -32,3 +35,7 @@ This CLI supports the following parameters:
 | --copy | Copy output in markdown format | true | `true`/`false`  | No |
 | --copy-csv | Copy output in csv format | false | `true`/`false`  | No |
 
+**Examples** 
+
+* ``` ghpr -t <token> -p <pr-link> --copy```
+* ``` ghpr -t <token> -p <pr-link> --copy-csv True```

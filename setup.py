@@ -17,7 +17,7 @@ setup(
     project_urls={
         "Bug Tracker": "https://github.com/vinaymavi/github-pr-data/issues",
     },
-    version='0.15.0',
+    version='1.0.0',
     py_modules=['ghpr','src'],
     packages = find_packages(),
     python_requires=">=3.6",
