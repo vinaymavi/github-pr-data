@@ -16,6 +16,9 @@ Project to get data from github pull requests and transfrom it to a format that 
 * Install requirements ```pip install -r requirements.txt```
 * Setup module in editable mode ``` pip install --editable .```. Meaning no need to install the module every time when you want to change the code.
 
+## How to create installer 
+  [Create installer](./CREATE_INSTALLER.MD)
+
 ### Reference
 
 * Github API - https://docs.github.com/en/rest
@@ -30,12 +33,12 @@ This CLI supports the following parameters:
 
 | Option | Description | Default value | Supported Values |  Required |
 | --- | --- | --- | --- | --- |
-| --token | The token to use for authentication.  |  |  | Yes|
-| --pr-link | This is the pull request number. | | PR link  | yes |
+| --token / -t | The token to use for authentication.  |  |  | Yes|
+| --pr-link / -l | This is the pull request number. | | PR link  | yes |
 | --copy | Copy output in markdown format | true | `true`/`false`  | No |
 | --copy-csv | Copy output in csv format | false | `true`/`false`  | No |
 
 **Examples** 
 
-* ``` ghpr -t <token> -p <pr-link> --copy```
-* ``` ghpr -t <token> -p <pr-link> --copy-csv True```
+* ``` ghpr -t <token> -l <pr-link> --copy```
+* ``` ghpr -t <token> -l <pr-link> --copy-csv True```
