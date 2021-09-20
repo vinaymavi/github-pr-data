@@ -49,4 +49,7 @@ def cli(token, pr_link, copy, copy_csv):
         click.echo("\nContent copied in Markdown format\n")
         click.echo("#################################")
     
-    
+# Below line required to create an executable file.
+# pyinstaller executes current file only and this __main__ syantax is rquired
+if __name__ == "__main__":
+    cli()
