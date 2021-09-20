@@ -1,6 +1,7 @@
 import click
 from click.utils import echo
 import pyperclip
+import sys
 from tabulate import tabulate
 
 
@@ -10,10 +11,21 @@ from src.github.github import Github
 
 @click.command()
 @click.option('-t','--token', type=str, help='Github access token')
+@click.option('--version/--no-version', type=bool, default=False, help='Get version info')
 @click.option('-l','--pr-link', type=str, help='Full pull request link')
 @click.option('--copy/--no-copy', type=bool, default=True, help='Copy output as markdown')
 @click.option('--copy-csv', type=bool, default=False, help='Copy output as CSV')
-def cli(token, pr_link, copy, copy_csv):
+def cli(token, pr_link, copy, copy_csv,version):
+    # Print version
+    if(version):
+        click.echo('1.0.1')
+        sys.exit(0)
+
+    # Print help if required parameters not provided
+    if(not token or not pr_link):
+        click.echo("Requried options are not provided.\nPlease run ghpr --help for more info.")
+        sys.exit(0)
+
     hostname, org, repo_name, pr_or_issue_number = parse_github_url(pr_link)
     
     github = Github(hostname=hostname, token=token)
@@ -48,5 +60,4 @@ def cli(token, pr_link, copy, copy_csv):
         click.echo("#################################")
         click.echo("\nContent copied in Markdown format\n")
         click.echo("#################################")
-    
     
