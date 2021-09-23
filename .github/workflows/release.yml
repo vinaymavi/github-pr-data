@@ -33,7 +33,7 @@ jobs:
         pyinstaller ghpr.py --hidden-import=_cffi_backend
     - uses: actions/upload-artifact@v2
       with:
-        name: mac-ghpr-${{github.ref}}
+        name: windows-ghpr
         path: ./dist/ghpr/
   
   build_mac_installer:
@@ -57,7 +57,7 @@ jobs:
         pyinstaller ghpr.py --hidden-import=_cffi_backend
     - uses: actions/upload-artifact@v2
       with:
-        name: mac-ghpr-${{github.ref}}
+        name: mac-ghpr
         path: ./dist/ghpr/
   
   build_linux_installer:
@@ -81,5 +81,5 @@ jobs:
         pyinstaller ghpr.py --hidden-import=_cffi_backend
     - uses: actions/upload-artifact@v2
       with:
-        name: mac-ghpr-${{github.ref}}
+        name: linux-ghpr
         path: ./dist/ghpr/
