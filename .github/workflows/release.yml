@@ -1,0 +1,85 @@
+# This workflow will install Python dependencies
+# Publish new release
+# Publish new version to PyPi
+# Create installer for windows, mac and linux
+
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+# Build installers specific to Operatiing system
+  build_windows_installer:
+    name: Windows Installer
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Create installer
+      run: |
+        pyinstaller ghpr.py --hidden-import=_cffi_backend
+    - uses: actions/upload-artifact@v2
+      with:
+        name: mac-ghpr-${{github.ref}}
+        path: ./dist/ghpr/
+  
+  build_mac_installer:
+    name: Mac Installer
+
+    runs-on: macos-11
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Create installer
+      run: |
+        pyinstaller ghpr.py --hidden-import=_cffi_backend
+    - uses: actions/upload-artifact@v2
+      with:
+        name: mac-ghpr-${{github.ref}}
+        path: ./dist/ghpr/
+  
+  build_linux_installer:
+    name: Mac Installer
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Create installer
+      run: |
+        pyinstaller ghpr.py --hidden-import=_cffi_backend
+    - uses: actions/upload-artifact@v2
+      with:
+        name: mac-ghpr-${{github.ref}}
+        path: ./dist/ghpr/
