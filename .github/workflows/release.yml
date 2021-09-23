@@ -7,8 +7,8 @@ name: Release
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - 'releases/**'
 
 jobs:
 # Build installers specific to Operatiing system
