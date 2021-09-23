@@ -27,7 +27,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -r requirements.txt
     - name: Create installer
       run: |
         pyinstaller ghpr.py --hidden-import=_cffi_backend
@@ -51,7 +51,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -r requirements.txt
     - name: Create installer
       run: |
         pyinstaller ghpr.py --hidden-import=_cffi_backend
@@ -61,7 +61,7 @@ jobs:
         path: ./dist/ghpr/
   
   build_linux_installer:
-    name: Mac Installer
+    name: Linux Installer
 
     runs-on: ubuntu-latest
 
@@ -75,7 +75,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -r requirements.txt
     - name: Create installer
       run: |
         pyinstaller ghpr.py --hidden-import=_cffi_backend
