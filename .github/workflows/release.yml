@@ -30,7 +30,7 @@ jobs:
         pip install -r requirements.txt
     - name: Create installer
       run: |
-        pyinstaller ghpr.py --hidden-import=_cffi_backend
+        pyinstaller  -n ghpr ./ghpr-installer.py --hidden-import=_cffi_backend
     - uses: actions/upload-artifact@v2
       with:
         name: windows-ghpr
@@ -54,7 +54,7 @@ jobs:
         pip install -r requirements.txt
     - name: Create installer
       run: |
-        pyinstaller ghpr.py --hidden-import=_cffi_backend
+        pyinstaller  -n ghpr ./ghpr-installer.py --hidden-import=_cffi_backend
     - uses: actions/upload-artifact@v2
       with:
         name: mac-ghpr
@@ -78,7 +78,7 @@ jobs:
         pip install -r requirements.txt
     - name: Create installer
       run: |
-        pyinstaller ghpr.py --hidden-import=_cffi_backend
+        pyinstaller  -n ghpr ./ghpr-installer.py --hidden-import=_cffi_backend
     - uses: actions/upload-artifact@v2
       with:
         name: linux-ghpr
